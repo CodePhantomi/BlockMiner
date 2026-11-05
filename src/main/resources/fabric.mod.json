@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "blockminer",
+  "version": "${version}",
+  "name": "Block Miner",
+  "description": "Mines a marked box of one block type, avoids lava and water, unloads into a chest.",
+  "authors": ["CodePhantom_"],
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.codephantom.blockminer.BlockMinerClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
