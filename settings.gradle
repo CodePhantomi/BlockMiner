@@ -1,0 +1,16 @@
+pluginManagement {
+    repositories {
+        maven {
+            name = "Fabric"
+            url = "https://maven.fabricmc.net/"
+        }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id "net.fabricmc.fabric-loom" version "1.17"
+}
+
+rootProject.name = "BlockMiner"
