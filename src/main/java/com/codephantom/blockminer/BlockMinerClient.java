@@ -210,7 +210,15 @@ public class BlockMinerClient implements ClientModInitializer {
         BlockPos feetBelow = p.blockPosition().below();
         BlockPos best = null;
         double bestD = Double.MAX_VALUE;
-        for (BlockPos pos : BlockPos.betweenClosed(corner1, corner2)) {
+        BlockPos min = new BlockPos(
+            Math.min(corner1.getX(), corner2.getX()),
+            Math.min(corner1.getY(), corner2.getY()),
+            Math.min(corner1.getZ(), corner2.getZ()));
+        BlockPos max = new BlockPos(
+            Math.max(corner1.getX(), corner2.getX()),
+            Math.max(corner1.getY(), corner2.getY()),
+            Math.max(corner1.getZ(), corner2.getZ()));
+        for (BlockPos pos : BlockPos.betweenClosed(min, max)) {
             if (!isMinable(mc, pos) || pos.equals(feetBelow) || !isExposed(mc, pos)) continue;
             double d = pos.distSqr(p.blockPosition());
             if (d < bestD) { bestD = d; best = pos.immutable(); }
