@@ -9,8 +9,4 @@ pluginManagement {
     }
 }
 
-plugins {
-    id "net.fabricmc.fabric-loom" version "1.17.9"
-}
-
 rootProject.name = "BlockMiner"
